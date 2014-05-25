@@ -34,3 +34,11 @@ After you modify the `makefile` compilation and installation are easy. From the 
 * `make load` to load the code onto your microcontroller
 
 Because most of these examples are based on the tuxgraphics library make sure to check out [their documentation as well](http://tuxgraphics.org/electronics/200905/embedded-tcp-ip-stack.shtml).
+
+
+###General Tips / Troubleshooting
+So lets say you compile and load the `UDP_Client_Send` example and are unsure if your data is actually being sent. This is a great oppurtunity to learn how to use [Wireshark](http://www.wireshark.org/). Wireshark is a network analyzing tool that allows you to monitor and record network packets. Once you install wireshark it is pretty easy to find the packets you are looking for.
+All we need to do is look for traffic that has the IP address of our microcontroller. Keep in mind the IP address of the microcontroller is typically stored in the variable `local_host`. Once in wireshark all we need to do is apply a simple filter and we can tell if traffic is being generated:
+
+![alt tag](http://i.imgur.com/TxzCYRa.png)
+
